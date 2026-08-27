@@ -12,15 +12,16 @@ paper interface: N=21, t=882*pi
 [zeta(3,4/5) < 2.216                                 ] PASS
 
 === Upper non-stationary remainder (current N=21 constants) ===
-  near upper endpoint at N=21        = [4.80722320000000000000000000000 +/- 3e-34]
+  near upper endpoint at N=21        = [4.85362366944000000000000000000 +/- 3e-34]
 [near upper endpoint < 4.854                         ] PASS
   far upper endpoint at N=21         = [0.00905988814990421403619612609821 +/- 2.83e-34]
 [far upper endpoint < 0.0091                         ] PASS
-  total upper remainder at N=21      = [4.81628308814990421403619612610 +/- 1.80e-30]
+  total upper remainder at N=21      = [4.86268355758990421403619612610 +/- 1.80e-30]
 [total upper remainder < 4.863                       ] PASS
 
 === Lower remainder coefficient assembly ===
-[2.108 + 1.324 + 0.798 = 4.230                       ] PASS
+  B_H^2 coefficient sum              = [4.23000000000000000000000000000 +/- 3e-34]
+[2.108+1.324+0.798 = 4.230 exactly                   ] PASS
   B_H coefficient sum                = [18.1960000000000000000000000000 +/- 3e-33]
 [18.196 < 18.20                                      ] PASS
   constant coefficient sum           = [42.6030000000000000000000000000 +/- 3e-33]
@@ -46,19 +47,16 @@ paper interface: N=21, t=882*pi
   sup |(C2^Z)''|                     = [0.552083333333333333333333333333 +/- 3.34e-31]
 [||(C2^Z)''|| < 0.552084                             ] PASS
 
-=== C1^Z,C2^Z derivative-remainder conversion ===
-  C1^Z first-derivative coefficient  = [0.418139469525639971912325015511 +/- 2.97e-31]
-[C1^Z first-derivative coeff < 0.418140              ] PASS
-  C2^Z first-derivative coefficient  = [0.0543736699883137938612110710745 +/- 7.03e-33]
-[C2^Z first-derivative coeff < 0.054374              ] PASS
-  C1^Z second-derivative coefficient = [0.914891399129965739774582507051 +/- 2.93e-31]
-[C1^Z second-derivative coeff < 0.914892             ] PASS
-  C2^Z second-derivative coefficient = [0.0750629966656945202139271173654 +/- 2.74e-33]
-[C2^Z second-derivative coeff < 0.075063             ] PASS
-  final E' coefficient               = [0.953513139513953765773536086586 +/- 1.97e-31]
-[0.481 + C1^Z' + C2^Z' < 0.954                       ] PASS
-  final E'' coefficient              = [1.99995439579566025998850962442 +/- 3.90e-30]
-[1.01 + C1^Z'' + C2^Z'' < 2.000                      ] PASS
+=== Direct differentiated K=2 Hardy remainder ===
+  T0 = 882*pi                        = [2770.88472046619763632405146405 +/- 2.53e-27]
+  t^(9/4) |E'| majorant              = [68.1902900000000000000000000000 +/- 3e-32]
+[direct E' majorant < 70                             ] PASS
+  70/(882*pi)                        = [0.0252626893796659263125212322814 +/- 4.86e-32]
+[70/(882*pi) < 0.026                                 ] PASS
+  t^(11/4) |E''| majorant            = [16.2625460000000000000000000000 +/- 3e-33]
+[direct E'' majorant < 17                            ] PASS
+  17/(882*pi)                        = [0.00613522456363315353304087069690 +/- 3.54e-34]
+[17/(882*pi) < 0.0062                                ] PASS
 
 === Transition corrections at t=882*pi ===
   R_tr majorant at 882*pi            = [0.00707423455132911581466524497025 +/- 2.05e-33]

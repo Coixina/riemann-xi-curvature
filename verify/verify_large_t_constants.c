@@ -6,9 +6,9 @@
  *
  *   H_kappa(t) = Xi'(t)^2 - Xi(t) Xi''(t) - (kappa/2) Xi(t)^2.
  *
- * This program does NOT prove the structural Poisson/intertwining/Mittag-Leffler
- * identities. It verifies the scalar inequalities that enter after those analytic
- * identities have been proved.
+ * This program is intentionally small.  It does NOT prove the structural
+ * Poisson/intertwining/Mittag-Leffler identities.  It verifies the scalar
+ * inequalities that enter after those analytic identities have been proved.
  *
  * Target: FLINT 3.x (Arb integrated in FLINT).
  *
@@ -28,8 +28,9 @@
  *        1/t^2 <= lambda_0^(3) <= 2/t^2  (t>=200).
  *   5. Direct certification of the global Hardy-real C1^Z,C2^Z jet
  *      bounds on |p|<=1.
- *   6. Conversion of those jet bounds into the derivative-remainder
- *      constants 0.954 and 2.000.
+ *   6. Direct differentiated K=2 Hardy remainder scalar assembly at
+ *      t>=882*pi: |E'|<70 t^(-9/4), |E''|<17 t^(-11/4), hence
+ *      |E'|<0.026 t^(-5/4), |E''|<0.0062 t^(-7/4).
  *   7. Fixed-kappa transition corrections at t=882*pi:
  *        |R_tr| < 0.00708, |R_Q| < 0.00243.
  *   8. Current discrete majorant:
@@ -154,7 +155,8 @@ verify_hurwitz_sums(slong prec)
 
 
 static int
-shifted_poly_has_strictly_positive_coeffs(const slong *coeff, slong len,slong shift)
+shifted_poly_has_strictly_positive_coeffs(const slong *coeff, slong len,
+                                          slong shift)
 {
     fmpz_poly_t f, g;
     fmpz_t c, a;
@@ -429,141 +431,90 @@ verify_C1C2_global_jets(slong prec)
 
 
 static void
-verify_derivative_remainder_conversion(slong prec)
+verify_direct_R2_derivative_bounds(slong prec)
 {
     /*
-       The value remainder is taken directly from Gabcke at order K=2:
-           |Z-P2| < 0.011 t^(-7/4).
+       Direct differentiated K=2 remainder route, valid on the large-height
+       range t >= T0 = 882*pi.
 
-       Here the derivative reconstruction is recomputed from the
-       rounded Hardy-real C1^Z,C2^Z jet bounds used in the theorem.
+       The analytic part (proved separately in the manuscript) reduces the
+       true Hardy remainder E=Z-P2 to four outward-safe contributions after
+       the Gabcke auxiliary remainder RS_2 is combined with the Hardy factor U:
+
+         t^(9/4) |E'|  <= 68.1811 + 0.00887 + 0.000314 + 0.000006,
+         t^(11/4)|E''| <= 16.24395 + 0.01821 + 0.000382 + 0.000004.
+
+       These entries include the prefactor a^(-1/2), the U-layer, the B1/B2
+       jet bounds, and the differentiated RS_2 bounds.  This routine performs
+       only the rigorous outward-rounded scalar assembly, consistently with
+       the scope of this verifier; it does not re-prove the analytic Gabcke
+       integral/ODE majorants.
+
+       We certify the convenient theorem constants
+
+         |E'|  < 70 t^(-9/4),
+         |E''| < 17 t^(-11/4),
+
+       and, since t >= 882*pi,
+
+         |E'|  < 0.026  t^(-5/4),
+         |E''| < 0.0062 t^(-7/4).
+
+       The historical 0.481 and 1.01 inputs are deliberately not used.
     */
-    arb_t pi, twopi, T0, C1, C1p, C1pp, C2, C2p, C2pp;
-    arb_t d1, d2, dd1, dd2, tmp, tmp2, sum, bound;
+    arb_t pi, T0, c, term, bound, converted;
 
-    arb_init(pi); arb_init(twopi); arb_init(T0);
-    arb_init(C1); arb_init(C1p); arb_init(C1pp);
-    arb_init(C2); arb_init(C2p); arb_init(C2pp);
-    arb_init(d1); arb_init(d2); arb_init(dd1); arb_init(dd2);
-    arb_init(tmp); arb_init(tmp2); arb_init(sum); arb_init(bound);
+    arb_init(pi); arb_init(T0); arb_init(c);
+    arb_init(term); arb_init(bound); arb_init(converted);
 
-    printf("\n=== C1^Z,C2^Z derivative-remainder conversion ===\n");
+    printf("\n=== Direct differentiated K=2 Hardy remainder ===\n");
 
     arb_const_pi(pi, prec);
-    arb_mul_ui(twopi, pi, 2, prec);
-    arb_set_ui(T0, 200);
+    arb_mul_ui(T0, pi, 882, prec);
+    print_ball("T0 = 882*pi", T0);
 
-    set_q(C1, 106103296, 1000000000L, prec);
-    set_q(C1p, 250000001, 1000000000L, prec);
-    set_q(C1pp, 1333333334, 1000000000L, prec);
+    /* First derivative: normalized t^(9/4)|E'| contribution assembly. */
+    set_q(c, 681811, 10000, prec);      /* 68.1811 */
+    set_q(term, 887, 100000, prec);     /* 0.00887 */
+    arb_add(c, c, term, prec);
+    set_q(term, 314, 1000000, prec);    /* 0.000314 */
+    arb_add(c, c, term, prec);
+    set_q(term, 6, 1000000, prec);      /* 0.000006 */
+    arb_add(c, c, term, prec);
 
-    set_q(C2, 36474, 1000000L, prec);
-    set_q(C2p, 185681, 1000000L, prec);
-    set_q(C2pp, 552084, 1000000L, prec);
+    print_ball("t^(9/4) |E'| majorant", c);
+    arb_set_ui(bound, 70);
+    check_lt("direct E' majorant < 70", c, bound);
 
-    /* First derivative C1^Z, r=3/2. */
-    pow_q(tmp, twopi, 3, 4, prec);
-    arb_mul(tmp, tmp, C1, prec);
-    arb_mul_ui(tmp, tmp, 3, prec);
-    arb_div_ui(tmp, tmp, 4, prec);
-    arb_sqrt(tmp2, T0, prec);
-    arb_div(tmp, tmp, tmp2, prec);
+    /* Convert 70 t^(-9/4) to the old t^(-5/4) scale at t >= T0. */
+    arb_set_ui(converted, 70);
+    arb_div(converted, converted, T0, prec);
+    print_ball("70/(882*pi)", converted);
+    set_q(bound, 26, 1000, prec);
+    check_lt("70/(882*pi) < 0.026", converted, bound);
 
-    pow_q(tmp2, twopi, 1, 4, prec);
-    arb_mul(tmp2, tmp2, C1p, prec);
-    arb_add(d1, tmp, tmp2, prec);
+    /* Second derivative: normalized t^(11/4)|E''| contribution assembly. */
+    set_q(c, 1624395, 100000, prec);    /* 16.24395 */
+    set_q(term, 1821, 100000, prec);    /* 0.01821 */
+    arb_add(c, c, term, prec);
+    set_q(term, 382, 1000000, prec);    /* 0.000382 */
+    arb_add(c, c, term, prec);
+    set_q(term, 4, 1000000, prec);      /* 0.000004 */
+    arb_add(c, c, term, prec);
 
-    /* First derivative C2^Z, r=5/2. */
-    pow_q(tmp, twopi, 5, 4, prec);
-    arb_mul(tmp, tmp, C2, prec);
-    arb_mul_ui(tmp, tmp, 5, prec);
-    arb_div_ui(tmp, tmp, 4, prec);
-    arb_div(tmp, tmp, T0, prec);
+    print_ball("t^(11/4) |E''| majorant", c);
+    arb_set_ui(bound, 17);
+    check_lt("direct E'' majorant < 17", c, bound);
 
-    pow_q(tmp2, twopi, 3, 4, prec);
-    arb_mul(tmp2, tmp2, C2p, prec);
-    arb_sqrt(sum, T0, prec);
-    arb_div(tmp2, tmp2, sum, prec);
-    arb_add(d2, tmp, tmp2, prec);
+    /* Convert 17 t^(-11/4) to the old t^(-7/4) scale at t >= T0. */
+    arb_set_ui(converted, 17);
+    arb_div(converted, converted, T0, prec);
+    print_ball("17/(882*pi)", converted);
+    set_q(bound, 62, 10000, prec);
+    check_lt("17/(882*pi) < 0.0062", converted, bound);
 
-    set_q(bound, 418140, 1000000L, prec);
-    print_ball("C1^Z first-derivative coefficient", d1);
-    check_lt("C1^Z first-derivative coeff < 0.418140", d1, bound);
-
-    set_q(bound, 54374, 1000000L, prec);
-    print_ball("C2^Z first-derivative coefficient", d2);
-    check_lt("C2^Z first-derivative coeff < 0.054374", d2, bound);
-
-    /* Second derivative C1^Z, r=3/2. */
-    pow_q(tmp, twopi, 3, 4, prec);
-    arb_mul(tmp, tmp, C1, prec);
-    arb_mul_ui(tmp, tmp, 21, prec);
-    arb_div_ui(tmp, tmp, 16, prec);
-    arb_div(tmp, tmp, T0, prec);
-    arb_set(dd1, tmp);
-
-    pow_q(tmp, twopi, 1, 4, prec);
-    arb_mul(tmp, tmp, C1p, prec);
-    arb_mul_ui(tmp, tmp, 5, prec);
-    arb_div_ui(tmp, tmp, 2, prec);
-    arb_sqrt(tmp2, T0, prec);
-    arb_div(tmp, tmp, tmp2, prec);
-    arb_add(dd1, dd1, tmp, prec);
-
-    pow_q(tmp, twopi, -1, 4, prec);
-    arb_mul(tmp, tmp, C1pp, prec);
-    arb_add(dd1, dd1, tmp, prec);
-
-    /* Second derivative C2^Z, r=5/2. */
-    pow_q(tmp, twopi, 5, 4, prec);
-    arb_mul(tmp, tmp, C2, prec);
-    arb_mul_ui(tmp, tmp, 45, prec);
-    arb_div_ui(tmp, tmp, 16, prec);
-    arb_sqrt(tmp2, T0, prec);
-    arb_mul(tmp2, tmp2, T0, prec);
-    arb_div(tmp, tmp, tmp2, prec);
-    arb_set(dd2, tmp);
-
-    pow_q(tmp, twopi, 3, 4, prec);
-    arb_mul(tmp, tmp, C2p, prec);
-    arb_mul_ui(tmp, tmp, 7, prec);
-    arb_div_ui(tmp, tmp, 2, prec);
-    arb_div(tmp, tmp, T0, prec);
-    arb_add(dd2, dd2, tmp, prec);
-
-    pow_q(tmp, twopi, 1, 4, prec);
-    arb_mul(tmp, tmp, C2pp, prec);
-    arb_sqrt(tmp2, T0, prec);
-    arb_div(tmp, tmp, tmp2, prec);
-    arb_add(dd2, dd2, tmp, prec);
-
-    set_q(bound, 914892, 1000000L, prec);
-    print_ball("C1^Z second-derivative coefficient", dd1);
-    check_lt("C1^Z second-derivative coeff < 0.914892", dd1, bound);
-
-    set_q(bound, 75063, 1000000L, prec);
-    print_ball("C2^Z second-derivative coefficient", dd2);
-    check_lt("C2^Z second-derivative coeff < 0.075063", dd2, bound);
-
-    set_q(sum, 481, 1000, prec);
-    arb_add(sum, sum, d1, prec);
-    arb_add(sum, sum, d2, prec);
-    set_q(bound, 954, 1000, prec);
-    print_ball("final E' coefficient", sum);
-    check_lt("0.481 + C1^Z' + C2^Z' < 0.954", sum, bound);
-
-    set_q(sum, 101, 100, prec);
-    arb_add(sum, sum, dd1, prec);
-    arb_add(sum, sum, dd2, prec);
-    set_q(bound, 2, 1, prec);
-    print_ball("final E'' coefficient", sum);
-    check_lt("1.01 + C1^Z'' + C2^Z'' < 2.000", sum, bound);
-
-    arb_clear(pi); arb_clear(twopi); arb_clear(T0);
-    arb_clear(C1); arb_clear(C1p); arb_clear(C1pp);
-    arb_clear(C2); arb_clear(C2p); arb_clear(C2pp);
-    arb_clear(d1); arb_clear(d2); arb_clear(dd1); arb_clear(dd2);
-    arb_clear(tmp); arb_clear(tmp2); arb_clear(sum); arb_clear(bound);
+    arb_clear(pi); arb_clear(T0); arb_clear(c);
+    arb_clear(term); arb_clear(bound); arb_clear(converted);
 }
 
 static void
@@ -812,13 +763,13 @@ verify_upper_residual_current(slong prec)
     arb_mul(pi2, pi, pi, prec);
     set_q(alpha, 1098, 1000, prec);      /* alpha_N < 1.098 */
 
-    /* near = 34.84 * [0.147*2.300/N + 0.055*2.216]. */
+    /* near = 34.84 * [0.147*2.300/N + 0.055601*2.216]. */
     set_q(x, 147, 1000, prec);
     set_q(y, 2300, 1000, prec);
     arb_mul(x, x, y, prec);
     arb_div(x, x, N, prec);
 
-    set_q(y, 55, 1000, prec);
+    set_q(y, 55601, 1000000, prec);
     set_q(z, 2216, 1000, prec);
     arb_mul(y, y, z, prec);
     arb_add(x, x, y, prec);
@@ -924,13 +875,24 @@ verify_lower_remainder_rounding_current(slong prec)
 
     printf("\n=== Lower remainder coefficient assembly ===\n");
 
-    /* B_H^2: exact rational identity
-    2.108 + 1.324 + 0.798 = 4.230 = 4.23. */
-    if (2108 + 1324 + 798 == 4230)
-        printf("[%-52s] PASS\n", "2.108 + 1.324 + 0.798 = 4.230");
+    /* B_H^2: 2.108 + 1.324 + 0.798 = 4.230 <= 4.23. */
+    set_q(x, 2108, 1000, prec);
+    set_q(y, 1324, 1000, prec);
+    set_q(z, 798, 1000, prec);
+    arb_add(sum, x, y, prec);
+    arb_add(sum, sum, z, prec);
+    set_q(bound, 423, 100, prec);
+    print_ball("B_H^2 coefficient sum", sum);
+    /* The equality is exact at the rational level:
+       2108/1000 + 1324/1000 + 798/1000 = 423/100.
+       Do not ask Arb to certify overlap of two equal balls. */
+    if (2108L + 1324L + 798L == 4230L)
+        printf("[%-52s] PASS\n",
+               "2.108+1.324+0.798 = 4.230 exactly");
     else
     {
-        printf("[%-52s] FAIL\n", "2.108 + 1.324 + 0.798 = 4.230");
+        printf("[%-52s] FAIL\n",
+               "2.108+1.324+0.798 = 4.230 exactly");
         failures++;
     }
 
@@ -1303,7 +1265,7 @@ main(int argc, char **argv)
     verify_lower_remainder_rounding_current(prec);
     verify_stirling_lambda0(prec);
     verify_C1C2_global_jets(prec);
-    verify_derivative_remainder_conversion(prec);
+    verify_direct_R2_derivative_bounds(prec);
     verify_transition_corrections_882pi(prec);
     verify_current_first_cell(prec);
     verify_quadratic_bound_cells(prec);

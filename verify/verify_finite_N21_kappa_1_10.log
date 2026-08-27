@@ -1,0 +1,211 @@
+============================================================
+RH FINITE CERTIFICATE VERIFIER
+============================================================
+Certificate format      : RH-FINITE-1
+large_t_N               : 21
+Generator precision     : 256 bits
+Verification precision  : 256 bits
+Max extra depth         : 20
+Terminal leaves         : 1914979
+PARTITION CHECK         : PASS
+[verify] stored leaves=10000 / 1914979 analytic eval=10000 extra split=0 max_extra=0
+[verify] stored leaves=20000 / 1914979 analytic eval=20000 extra split=0 max_extra=0
+[verify] stored leaves=30000 / 1914979 analytic eval=30000 extra split=0 max_extra=0
+[verify] stored leaves=40000 / 1914979 analytic eval=40000 extra split=0 max_extra=0
+[verify] stored leaves=50000 / 1914979 analytic eval=50000 extra split=0 max_extra=0
+[verify] stored leaves=60000 / 1914979 analytic eval=60000 extra split=0 max_extra=0
+[verify] stored leaves=70000 / 1914979 analytic eval=70000 extra split=0 max_extra=0
+[verify] stored leaves=80000 / 1914979 analytic eval=80000 extra split=0 max_extra=0
+[verify] stored leaves=90000 / 1914979 analytic eval=90000 extra split=0 max_extra=0
+[verify] stored leaves=100000 / 1914979 analytic eval=100000 extra split=0 max_extra=0
+[verify] stored leaves=110000 / 1914979 analytic eval=110000 extra split=0 max_extra=0
+[verify] stored leaves=120000 / 1914979 analytic eval=120000 extra split=0 max_extra=0
+[verify] stored leaves=130000 / 1914979 analytic eval=130000 extra split=0 max_extra=0
+[verify] stored leaves=140000 / 1914979 analytic eval=140000 extra split=0 max_extra=0
+[verify] stored leaves=150000 / 1914979 analytic eval=150000 extra split=0 max_extra=0
+[verify] stored leaves=160000 / 1914979 analytic eval=160000 extra split=0 max_extra=0
+[verify] stored leaves=170000 / 1914979 analytic eval=170000 extra split=0 max_extra=0
+[verify] stored leaves=180000 / 1914979 analytic eval=180000 extra split=0 max_extra=0
+[verify] stored leaves=190000 / 1914979 analytic eval=190000 extra split=0 max_extra=0
+[verify] stored leaves=200000 / 1914979 analytic eval=200000 extra split=0 max_extra=0
+[verify] stored leaves=210000 / 1914979 analytic eval=210000 extra split=0 max_extra=0
+[verify] stored leaves=220000 / 1914979 analytic eval=220000 extra split=0 max_extra=0
+[verify] stored leaves=230000 / 1914979 analytic eval=230000 extra split=0 max_extra=0
+[verify] stored leaves=240000 / 1914979 analytic eval=240000 extra split=0 max_extra=0
+[verify] stored leaves=250000 / 1914979 analytic eval=250000 extra split=0 max_extra=0
+[verify] stored leaves=260000 / 1914979 analytic eval=260000 extra split=0 max_extra=0
+[verify] stored leaves=270000 / 1914979 analytic eval=270000 extra split=0 max_extra=0
+[verify] stored leaves=280000 / 1914979 analytic eval=280000 extra split=0 max_extra=0
+[verify] stored leaves=290000 / 1914979 analytic eval=290000 extra split=0 max_extra=0
+[verify] stored leaves=300000 / 1914979 analytic eval=300000 extra split=0 max_extra=0
+[verify] stored leaves=310000 / 1914979 analytic eval=310000 extra split=0 max_extra=0
+[verify] stored leaves=320000 / 1914979 analytic eval=320000 extra split=0 max_extra=0
+[verify] stored leaves=330000 / 1914979 analytic eval=330000 extra split=0 max_extra=0
+[verify] stored leaves=340000 / 1914979 analytic eval=340000 extra split=0 max_extra=0
+[verify] stored leaves=350000 / 1914979 analytic eval=350000 extra split=0 max_extra=0
+[verify] stored leaves=360000 / 1914979 analytic eval=360000 extra split=0 max_extra=0
+[verify] stored leaves=370000 / 1914979 analytic eval=370000 extra split=0 max_extra=0
+[verify] stored leaves=380000 / 1914979 analytic eval=380000 extra split=0 max_extra=0
+[verify] stored leaves=390000 / 1914979 analytic eval=390000 extra split=0 max_extra=0
+[verify] stored leaves=400000 / 1914979 analytic eval=400000 extra split=0 max_extra=0
+[verify] stored leaves=410000 / 1914979 analytic eval=410000 extra split=0 max_extra=0
+[verify] stored leaves=420000 / 1914979 analytic eval=420000 extra split=0 max_extra=0
+[verify] stored leaves=430000 / 1914979 analytic eval=430000 extra split=0 max_extra=0
+[verify] stored leaves=440000 / 1914979 analytic eval=440000 extra split=0 max_extra=0
+[verify] stored leaves=450000 / 1914979 analytic eval=450000 extra split=0 max_extra=0
+[verify] stored leaves=460000 / 1914979 analytic eval=460000 extra split=0 max_extra=0
+[verify] stored leaves=470000 / 1914979 analytic eval=470000 extra split=0 max_extra=0
+[verify] stored leaves=480000 / 1914979 analytic eval=480000 extra split=0 max_extra=0
+[verify] stored leaves=490000 / 1914979 analytic eval=490000 extra split=0 max_extra=0
+[verify] stored leaves=500000 / 1914979 analytic eval=500000 extra split=0 max_extra=0
+[verify] stored leaves=510000 / 1914979 analytic eval=510000 extra split=0 max_extra=0
+[verify] stored leaves=520000 / 1914979 analytic eval=520000 extra split=0 max_extra=0
+[verify] stored leaves=530000 / 1914979 analytic eval=530000 extra split=0 max_extra=0
+[verify] stored leaves=540000 / 1914979 analytic eval=540000 extra split=0 max_extra=0
+[verify] stored leaves=550000 / 1914979 analytic eval=550000 extra split=0 max_extra=0
+[verify] stored leaves=560000 / 1914979 analytic eval=560000 extra split=0 max_extra=0
+[verify] stored leaves=570000 / 1914979 analytic eval=570000 extra split=0 max_extra=0
+[verify] stored leaves=580000 / 1914979 analytic eval=580000 extra split=0 max_extra=0
+[verify] stored leaves=590000 / 1914979 analytic eval=590000 extra split=0 max_extra=0
+[verify] stored leaves=600000 / 1914979 analytic eval=600000 extra split=0 max_extra=0
+[verify] stored leaves=610000 / 1914979 analytic eval=610000 extra split=0 max_extra=0
+[verify] stored leaves=620000 / 1914979 analytic eval=620000 extra split=0 max_extra=0
+[verify] stored leaves=630000 / 1914979 analytic eval=630000 extra split=0 max_extra=0
+[verify] stored leaves=640000 / 1914979 analytic eval=640000 extra split=0 max_extra=0
+[verify] stored leaves=650000 / 1914979 analytic eval=650000 extra split=0 max_extra=0
+[verify] stored leaves=660000 / 1914979 analytic eval=660000 extra split=0 max_extra=0
+[verify] stored leaves=670000 / 1914979 analytic eval=670000 extra split=0 max_extra=0
+[verify] stored leaves=680000 / 1914979 analytic eval=680000 extra split=0 max_extra=0
+[verify] stored leaves=690000 / 1914979 analytic eval=690000 extra split=0 max_extra=0
+[verify] stored leaves=700000 / 1914979 analytic eval=700000 extra split=0 max_extra=0
+[verify] stored leaves=710000 / 1914979 analytic eval=710000 extra split=0 max_extra=0
+[verify] stored leaves=720000 / 1914979 analytic eval=720000 extra split=0 max_extra=0
+[verify] stored leaves=730000 / 1914979 analytic eval=730000 extra split=0 max_extra=0
+[verify] stored leaves=740000 / 1914979 analytic eval=740000 extra split=0 max_extra=0
+[verify] stored leaves=750000 / 1914979 analytic eval=750000 extra split=0 max_extra=0
+[verify] stored leaves=760000 / 1914979 analytic eval=760000 extra split=0 max_extra=0
+[verify] stored leaves=770000 / 1914979 analytic eval=770000 extra split=0 max_extra=0
+[verify] stored leaves=780000 / 1914979 analytic eval=780000 extra split=0 max_extra=0
+[verify] stored leaves=790000 / 1914979 analytic eval=790000 extra split=0 max_extra=0
+[verify] stored leaves=800000 / 1914979 analytic eval=800000 extra split=0 max_extra=0
+[verify] stored leaves=810000 / 1914979 analytic eval=810000 extra split=0 max_extra=0
+[verify] stored leaves=820000 / 1914979 analytic eval=820000 extra split=0 max_extra=0
+[verify] stored leaves=830000 / 1914979 analytic eval=830000 extra split=0 max_extra=0
+[verify] stored leaves=840000 / 1914979 analytic eval=840000 extra split=0 max_extra=0
+[verify] stored leaves=850000 / 1914979 analytic eval=850000 extra split=0 max_extra=0
+[verify] stored leaves=860000 / 1914979 analytic eval=860000 extra split=0 max_extra=0
+[verify] stored leaves=870000 / 1914979 analytic eval=870000 extra split=0 max_extra=0
+[verify] stored leaves=880000 / 1914979 analytic eval=880000 extra split=0 max_extra=0
+[verify] stored leaves=890000 / 1914979 analytic eval=890000 extra split=0 max_extra=0
+[verify] stored leaves=900000 / 1914979 analytic eval=900000 extra split=0 max_extra=0
+[verify] stored leaves=910000 / 1914979 analytic eval=910000 extra split=0 max_extra=0
+[verify] stored leaves=920000 / 1914979 analytic eval=920000 extra split=0 max_extra=0
+[verify] stored leaves=930000 / 1914979 analytic eval=930000 extra split=0 max_extra=0
+[verify] stored leaves=940000 / 1914979 analytic eval=940000 extra split=0 max_extra=0
+[verify] stored leaves=950000 / 1914979 analytic eval=950000 extra split=0 max_extra=0
+[verify] stored leaves=960000 / 1914979 analytic eval=960000 extra split=0 max_extra=0
+[verify] stored leaves=970000 / 1914979 analytic eval=970000 extra split=0 max_extra=0
+[verify] stored leaves=980000 / 1914979 analytic eval=980000 extra split=0 max_extra=0
+[verify] stored leaves=990000 / 1914979 analytic eval=990000 extra split=0 max_extra=0
+[verify] stored leaves=1000000 / 1914979 analytic eval=1000000 extra split=0 max_extra=0
+[verify] stored leaves=1010000 / 1914979 analytic eval=1010000 extra split=0 max_extra=0
+[verify] stored leaves=1020000 / 1914979 analytic eval=1020000 extra split=0 max_extra=0
+[verify] stored leaves=1030000 / 1914979 analytic eval=1030000 extra split=0 max_extra=0
+[verify] stored leaves=1040000 / 1914979 analytic eval=1040000 extra split=0 max_extra=0
+[verify] stored leaves=1050000 / 1914979 analytic eval=1050000 extra split=0 max_extra=0
+[verify] stored leaves=1060000 / 1914979 analytic eval=1060000 extra split=0 max_extra=0
+[verify] stored leaves=1070000 / 1914979 analytic eval=1070000 extra split=0 max_extra=0
+[verify] stored leaves=1080000 / 1914979 analytic eval=1080000 extra split=0 max_extra=0
+[verify] stored leaves=1090000 / 1914979 analytic eval=1090000 extra split=0 max_extra=0
+[verify] stored leaves=1100000 / 1914979 analytic eval=1100000 extra split=0 max_extra=0
+[verify] stored leaves=1110000 / 1914979 analytic eval=1110000 extra split=0 max_extra=0
+[verify] stored leaves=1120000 / 1914979 analytic eval=1120000 extra split=0 max_extra=0
+[verify] stored leaves=1130000 / 1914979 analytic eval=1130000 extra split=0 max_extra=0
+[verify] stored leaves=1140000 / 1914979 analytic eval=1140000 extra split=0 max_extra=0
+[verify] stored leaves=1150000 / 1914979 analytic eval=1150000 extra split=0 max_extra=0
+[verify] stored leaves=1160000 / 1914979 analytic eval=1160000 extra split=0 max_extra=0
+[verify] stored leaves=1170000 / 1914979 analytic eval=1170000 extra split=0 max_extra=0
+[verify] stored leaves=1180000 / 1914979 analytic eval=1180000 extra split=0 max_extra=0
+[verify] stored leaves=1190000 / 1914979 analytic eval=1190000 extra split=0 max_extra=0
+[verify] stored leaves=1200000 / 1914979 analytic eval=1200000 extra split=0 max_extra=0
+[verify] stored leaves=1210000 / 1914979 analytic eval=1210000 extra split=0 max_extra=0
+[verify] stored leaves=1220000 / 1914979 analytic eval=1220000 extra split=0 max_extra=0
+[verify] stored leaves=1230000 / 1914979 analytic eval=1230000 extra split=0 max_extra=0
+[verify] stored leaves=1240000 / 1914979 analytic eval=1240000 extra split=0 max_extra=0
+[verify] stored leaves=1250000 / 1914979 analytic eval=1250000 extra split=0 max_extra=0
+[verify] stored leaves=1260000 / 1914979 analytic eval=1260000 extra split=0 max_extra=0
+[verify] stored leaves=1270000 / 1914979 analytic eval=1270000 extra split=0 max_extra=0
+[verify] stored leaves=1280000 / 1914979 analytic eval=1280000 extra split=0 max_extra=0
+[verify] stored leaves=1290000 / 1914979 analytic eval=1290000 extra split=0 max_extra=0
+[verify] stored leaves=1300000 / 1914979 analytic eval=1300000 extra split=0 max_extra=0
+[verify] stored leaves=1310000 / 1914979 analytic eval=1310000 extra split=0 max_extra=0
+[verify] stored leaves=1320000 / 1914979 analytic eval=1320000 extra split=0 max_extra=0
+[verify] stored leaves=1330000 / 1914979 analytic eval=1330000 extra split=0 max_extra=0
+[verify] stored leaves=1340000 / 1914979 analytic eval=1340000 extra split=0 max_extra=0
+[verify] stored leaves=1350000 / 1914979 analytic eval=1350000 extra split=0 max_extra=0
+[verify] stored leaves=1360000 / 1914979 analytic eval=1360000 extra split=0 max_extra=0
+[verify] stored leaves=1370000 / 1914979 analytic eval=1370000 extra split=0 max_extra=0
+[verify] stored leaves=1380000 / 1914979 analytic eval=1380000 extra split=0 max_extra=0
+[verify] stored leaves=1390000 / 1914979 analytic eval=1390000 extra split=0 max_extra=0
+[verify] stored leaves=1400000 / 1914979 analytic eval=1400000 extra split=0 max_extra=0
+[verify] stored leaves=1410000 / 1914979 analytic eval=1410000 extra split=0 max_extra=0
+[verify] stored leaves=1420000 / 1914979 analytic eval=1420000 extra split=0 max_extra=0
+[verify] stored leaves=1430000 / 1914979 analytic eval=1430000 extra split=0 max_extra=0
+[verify] stored leaves=1440000 / 1914979 analytic eval=1440000 extra split=0 max_extra=0
+[verify] stored leaves=1450000 / 1914979 analytic eval=1450000 extra split=0 max_extra=0
+[verify] stored leaves=1460000 / 1914979 analytic eval=1460000 extra split=0 max_extra=0
+[verify] stored leaves=1470000 / 1914979 analytic eval=1470000 extra split=0 max_extra=0
+[verify] stored leaves=1480000 / 1914979 analytic eval=1480000 extra split=0 max_extra=0
+[verify] stored leaves=1490000 / 1914979 analytic eval=1490000 extra split=0 max_extra=0
+[verify] stored leaves=1500000 / 1914979 analytic eval=1500000 extra split=0 max_extra=0
+[verify] stored leaves=1510000 / 1914979 analytic eval=1510000 extra split=0 max_extra=0
+[verify] stored leaves=1520000 / 1914979 analytic eval=1520000 extra split=0 max_extra=0
+[verify] stored leaves=1530000 / 1914979 analytic eval=1530000 extra split=0 max_extra=0
+[verify] stored leaves=1540000 / 1914979 analytic eval=1540000 extra split=0 max_extra=0
+[verify] stored leaves=1550000 / 1914979 analytic eval=1550000 extra split=0 max_extra=0
+[verify] stored leaves=1560000 / 1914979 analytic eval=1560000 extra split=0 max_extra=0
+[verify] stored leaves=1570000 / 1914979 analytic eval=1570000 extra split=0 max_extra=0
+[verify] stored leaves=1580000 / 1914979 analytic eval=1580000 extra split=0 max_extra=0
+[verify] stored leaves=1590000 / 1914979 analytic eval=1590000 extra split=0 max_extra=0
+[verify] stored leaves=1600000 / 1914979 analytic eval=1600000 extra split=0 max_extra=0
+[verify] stored leaves=1610000 / 1914979 analytic eval=1610000 extra split=0 max_extra=0
+[verify] stored leaves=1620000 / 1914979 analytic eval=1620000 extra split=0 max_extra=0
+[verify] stored leaves=1630000 / 1914979 analytic eval=1630000 extra split=0 max_extra=0
+[verify] stored leaves=1640000 / 1914979 analytic eval=1640000 extra split=0 max_extra=0
+[verify] stored leaves=1650000 / 1914979 analytic eval=1650000 extra split=0 max_extra=0
+[verify] stored leaves=1660000 / 1914979 analytic eval=1660000 extra split=0 max_extra=0
+[verify] stored leaves=1670000 / 1914979 analytic eval=1670000 extra split=0 max_extra=0
+[verify] stored leaves=1680000 / 1914979 analytic eval=1680000 extra split=0 max_extra=0
+[verify] stored leaves=1690000 / 1914979 analytic eval=1690000 extra split=0 max_extra=0
+[verify] stored leaves=1700000 / 1914979 analytic eval=1700000 extra split=0 max_extra=0
+[verify] stored leaves=1710000 / 1914979 analytic eval=1710000 extra split=0 max_extra=0
+[verify] stored leaves=1720000 / 1914979 analytic eval=1720000 extra split=0 max_extra=0
+[verify] stored leaves=1730000 / 1914979 analytic eval=1730000 extra split=0 max_extra=0
+[verify] stored leaves=1740000 / 1914979 analytic eval=1740000 extra split=0 max_extra=0
+[verify] stored leaves=1750000 / 1914979 analytic eval=1750000 extra split=0 max_extra=0
+[verify] stored leaves=1760000 / 1914979 analytic eval=1760000 extra split=0 max_extra=0
+[verify] stored leaves=1770000 / 1914979 analytic eval=1770000 extra split=0 max_extra=0
+[verify] stored leaves=1780000 / 1914979 analytic eval=1780000 extra split=0 max_extra=0
+[verify] stored leaves=1790000 / 1914979 analytic eval=1790000 extra split=0 max_extra=0
+[verify] stored leaves=1800000 / 1914979 analytic eval=1800000 extra split=0 max_extra=0
+[verify] stored leaves=1810000 / 1914979 analytic eval=1810000 extra split=0 max_extra=0
+[verify] stored leaves=1820000 / 1914979 analytic eval=1820000 extra split=0 max_extra=0
+[verify] stored leaves=1830000 / 1914979 analytic eval=1830000 extra split=0 max_extra=0
+[verify] stored leaves=1840000 / 1914979 analytic eval=1840000 extra split=0 max_extra=0
+[verify] stored leaves=1850000 / 1914979 analytic eval=1850000 extra split=0 max_extra=0
+[verify] stored leaves=1860000 / 1914979 analytic eval=1860000 extra split=0 max_extra=0
+[verify] stored leaves=1870000 / 1914979 analytic eval=1870000 extra split=0 max_extra=0
+[verify] stored leaves=1880000 / 1914979 analytic eval=1880000 extra split=0 max_extra=0
+[verify] stored leaves=1890000 / 1914979 analytic eval=1890000 extra split=0 max_extra=0
+[verify] stored leaves=1900000 / 1914979 analytic eval=1900000 extra split=0 max_extra=0
+[verify] stored leaves=1910000 / 1914979 analytic eval=1910000 extra split=0 max_extra=0
+RIGOROUS LEAF CHECK     : PASS
+Stored leaves verified  : 1914979
+Analytic evaluations    : 1914979
+Analytic terminal leaves: 1914979
+Additional subdivisions : 0
+Max extra depth used    : 0
+Minimum verified lower  : 1.54910797217581343870215193321e-7
+Minimum leaf            : (d=26,k=11283)
+CERTIFICATE             : VALID
+============================================================

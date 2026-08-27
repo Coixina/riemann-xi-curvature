@@ -1,0 +1,109 @@
+============================================================
+LARGE-t CONSTANT VERIFIER -- CURRENT ARTICLE CONSTANTS
+Arb/FLINT rigorous ball arithmetic
+precision = 256 bits
+paper interface: N=21, t=882*pi
+============================================================
+
+=== Hurwitz sums ===
+  zeta(2,4/5)                        = [2.29947413750170023850405548175 +/- 2.45e-30]
+[zeta(2,4/5) < 2.300                                 ] PASS
+  zeta(3,4/5)                        = [2.21505785421081730491535121647 +/- 1.68e-30]
+[zeta(3,4/5) < 2.216                                 ] PASS
+
+=== Upper non-stationary remainder (current N=21 constants) ===
+  near upper endpoint at N=21        = [4.80722320000000000000000000000 +/- 3e-34]
+[near upper endpoint < 4.854                         ] PASS
+  far upper endpoint at N=21         = [0.00905988814990421403619612609821 +/- 2.83e-34]
+[far upper endpoint < 0.0091                         ] PASS
+  total upper remainder at N=21      = [4.81628308814990421403619612610 +/- 1.80e-30]
+[total upper remainder < 4.863                       ] PASS
+
+=== Lower remainder coefficient assembly ===
+[2.108 + 1.324 + 0.798 = 4.230                       ] PASS
+  B_H coefficient sum                = [18.1960000000000000000000000000 +/- 3e-33]
+[18.196 < 18.20                                      ] PASS
+  constant coefficient sum           = [42.6030000000000000000000000000 +/- 3e-33]
+[42.603 < 42.61                                      ] PASS
+
+=== Stirling / lambda_0 ===
+[P_-(x+40000) has positive coefficients              ] PASS
+[P_+(x+40000) has positive coefficients              ] PASS
+  scaled Cauchy remainder at 200     = [1.22976781967434210449080162983e-10 +/- 2.81e-40]
+[scaled Cauchy remainder < 1.23e-10                  ] PASS
+
+=== Hardy-real C1^Z,C2^Z global jet bounds on |p| <= 1 ===
+  sup |C1^Z|                         = [0.106103295394596890512589175582 +/- 3.24e-31]
+[||C1^Z|| < 0.106103296                              ] PASS
+  sup |(C1^Z)'|                      = [0.250000000000000000000000000000 +/- 1e-35]
+[||(C1^Z)'|| < 0.250000001                           ] PASS
+  sup |(C1^Z)''|                     = [1.33333333333333333333333333333 +/- 3.34e-30]
+[||(C1^Z)''|| < 1.333333334                          ] PASS
+  sup |C2^Z|                         = [0.0364730077918926811137025291062 +/- 1.21e-33]
+[||C2^Z|| < 0.036474                                 ] PASS
+  sup |(C2^Z)'|                      = [0.185680766940544558397031057268 +/- 6.66e-32]
+[||(C2^Z)'|| < 0.185681                              ] PASS
+  sup |(C2^Z)''|                     = [0.552083333333333333333333333333 +/- 3.34e-31]
+[||(C2^Z)''|| < 0.552084                             ] PASS
+
+=== C1^Z,C2^Z derivative-remainder conversion ===
+  C1^Z first-derivative coefficient  = [0.418139469525639971912325015511 +/- 2.97e-31]
+[C1^Z first-derivative coeff < 0.418140              ] PASS
+  C2^Z first-derivative coefficient  = [0.0543736699883137938612110710745 +/- 7.03e-33]
+[C2^Z first-derivative coeff < 0.054374              ] PASS
+  C1^Z second-derivative coefficient = [0.914891399129965739774582507051 +/- 2.93e-31]
+[C1^Z second-derivative coeff < 0.914892             ] PASS
+  C2^Z second-derivative coefficient = [0.0750629966656945202139271173654 +/- 2.74e-33]
+[C2^Z second-derivative coeff < 0.075063             ] PASS
+  final E' coefficient               = [0.953513139513953765773536086586 +/- 1.97e-31]
+[0.481 + C1^Z' + C2^Z' < 0.954                       ] PASS
+  final E'' coefficient              = [1.99995439579566025998850962442 +/- 3.90e-30]
+[1.01 + C1^Z'' + C2^Z'' < 2.000                      ] PASS
+
+=== Transition corrections at t=882*pi ===
+  R_tr majorant at 882*pi            = [0.00707423455132911581466524497025 +/- 2.05e-33]
+[R_tr < 0.00708                                      ] PASS
+  R_Q majorant at 882*pi             = [0.00242591007844000000000000000000 +/- 3e-37]
+[R_Q < 0.00243                                       ] PASS
+
+=== Current first-cell checks: N=20/21 and t=882*pi ===
+  L_{1/10}(20)                       = [-0.566744909379111231776445165363 +/- 2.92e-31]
+[L_{1/10}(20) < 0                                    ] PASS
+  L_{1/10}(21)                       = [1.53182616085232816476341245527 +/- 1.45e-30]
+[L_{1/10}(21) > 1.5318                               ] PASS
+  E_exp(882*pi)                      = [6.59490696612796710127758341271e-3777 +/- 3.89e-3807]
+[E_exp(882*pi) < 1e-12                               ] PASS
+  absolute perturbation at 882*pi    = [0.00884279544108884360745569313513 +/- 1.81e-33]
+[absolute perturbation < 0.00885                     ] PASS
+  Theorem 3.23 first-cell margin     = [1.51346616085232816476341245527 +/- 1.45e-30]
+[first-cell margin > 1.5134                          ] PASS
+  kappa=1/2 first-cell margin        = [0.0336297300201559933961881608979 +/- 4.57e-32]
+[B_{1/2}[Z] first-cell majorant > 0.0336             ] PASS
+
+=== Corollary 3.31 explicit quadratic-bound checks ===
+[cell N=22 lower bound > 1.011                       ] PASS
+[cell N=23 lower bound > 2.910                       ] PASS
+[cell N=24 lower bound > 4.770                       ] PASS
+[cell N=25 lower bound > 6.592                       ] PASS
+[cell N=26 lower bound > 8.378                       ] PASS
+[cell N=27 lower bound > 10.131                      ] PASS
+[cell N=28 lower bound > 11.853                      ] PASS
+[cell N=29 lower bound > 13.543                      ] PASS
+[cell N=30 lower bound > 15.205                      ] PASS
+[cell N=31 lower bound > 16.839                      ] PASS
+[cell N=32 lower bound > 18.446                      ] PASS
+[cell N=33 lower bound > 20.028                      ] PASS
+  G_34                               = [27.8220900104018710908947856409 +/- 3.89e-29]
+[G_34 < 27.823                                       ] PASS
+  Ttr + TQ + DE/2 at N=34            = [0.0270932624471193153139374651014 +/- 2.32e-32]
+[remaining C* terms at N=34 < 0.028                  ] PASS
+  E0 + Eexp at N=34                  = [0.00379011963218587092246353915682 +/- 3.75e-33]
+[E0 + Eexp at N=34 < 0.009                           ] PASS
+  F(log 34)                          = [20.7840869499019277399964434925 +/- 4.60e-29]
+[F(log 34) > 20                                      ] PASS
+  F'(log 34)                         = [27.5390606113592566571233225129 +/- 1.40e-29]
+[F'(log 34) > 27                                     ] PASS
+
+============================================================
+ALL IMPLEMENTED CURRENT LARGE-t RIGOROUS CHECKS PASSED
+============================================================

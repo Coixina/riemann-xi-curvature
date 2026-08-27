@@ -1,0 +1,81 @@
+# ============================================================
+# Build products
+# ============================================================
+
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+compile_commands.json
+
+
+# ============================================================
+# Generated logs and temporary output
+# ============================================================
+
+*.log
+build_public_clean.txt
+
+# Keep the reference finite-certificate verification log
+!verify/verify_finite_N21_kappa_1_10.log
+
+
+# ============================================================
+# Manuscript sources and compiled manuscript
+# ============================================================
+#
+# The local paper/ directory is also the working directory used
+# to compile the manuscript.  The manuscript itself is not part
+# of the public computational repository.  Only reproducible
+# figure material under paper/figures/ is published.
+# ============================================================
+
+paper/main.tex
+paper/preamble.tex
+paper/references.bib
+paper/sections/
+paper/main.pdf
+
+
+# ============================================================
+# LaTeX build products
+# ============================================================
+
+*.aux
+*.blg
+*.bbl
+*.fls
+*.fdb_latexmk
+*.out
+*.synctex.gz
+*.toc
+
+
+# ============================================================
+# Editor / IDE files
+# ============================================================
+
+.vscode/
+.idea/
+
+*.swp
+*.swo
+*~
+
+
+# ============================================================
+# Operating-system files
+# ============================================================
+
+.DS_Store
+Thumbs.db
+
+
+# ============================================================
+# Temporary files
+# ============================================================
+
+*.tmp
+*.bak

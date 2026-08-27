@@ -6,7 +6,7 @@ Computational artifacts accompanying the manuscript
 
 The mathematical proof is given in the manuscript. This repository contains the code and rigorous computational artifacts used for:
 
-- the finite interval \(2\pi \le t \le 882\pi\);
+- the finite interval $2\pi \le t \le 882\pi$;
 - verification of the explicit constants in the large-height argument;
 - reproducible generation of the numerical figures.
 
@@ -47,9 +47,8 @@ ALL IMPLEMENTED CURRENT LARGE-t RIGOROUS CHECKS PASSED
 
 A reference output is provided in
 
-```text
 [`verify/verify_large_t_constants_output.txt`](verify/verify_large_t_constants_output.txt).
-```
+
 
 ## Verify the supplied finite certificate
 
@@ -60,11 +59,11 @@ A reference output is provided in
 
 The certificate covers
 
-\[
+$$
 2\pi \le t \le 882\pi,
 \qquad
-\kappa=\frac{1}{10},
-\]
+\kappa=\frac{1}{10}.
+$$
 
 with 256-bit generator precision and 1,914,979 terminal dyadic leaves.
 
@@ -100,9 +99,6 @@ Full regeneration is substantially more expensive than verification.
 
 ## Main files
 
-```text
-## Main files
-
 - [`certifier/rh_certifier.c`](certifier/rh_certifier.c)
 - [`certifier/verify_certificate.c`](certifier/verify_certificate.c)
 - [`certificates/finite_N21_kappa_1_10.txt`](certificates/finite_N21_kappa_1_10.txt)
@@ -110,7 +106,6 @@ Full regeneration is substantially more expensive than verification.
 - [`verify/verify_large_t_constants_output.txt`](verify/verify_large_t_constants_output.txt)
 - [`verify/verify_finite_N21_kappa_1_10.log`](verify/verify_finite_N21_kappa_1_10.log)
 - [`paper/figures/`](paper/figures/)
-```
 
 The manuscript PDF and LaTeX sources are not distributed in this repository.
 
